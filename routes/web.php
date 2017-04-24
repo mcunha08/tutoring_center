@@ -18,4 +18,5 @@ Route::get('/register', 'AccountCreationController@create');
 Route::post('/register', 'AccountCreationController@store');
 Route::get('/login', 'SessionCreationController@create');
 Route::post('/login', 'SessionCreationController@store');
+Route::post('/tutors', 'TutorController@list');
 //Route::post('/login')
