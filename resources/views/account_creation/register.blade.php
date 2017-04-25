@@ -57,7 +57,7 @@
                     @endif
                 </div>
             </div>
-            <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+            <div class="form-group {{ $errors->has('type') ? ' has-error' : '' }}">
                 <label for="password" class="col-md-4 control-label">Type of student:</label>
 
                 <div class="col-md-6">
@@ -67,7 +67,7 @@
                         <option value="instructor">instructor</option>
                     </select>
                     </div>
-                </div>
+            </div>
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
                     <button type="submit" class="btn btn-primary">
