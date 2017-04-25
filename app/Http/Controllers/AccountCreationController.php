@@ -21,7 +21,8 @@ class AccountCreationController extends Controller
             'lastname' => request('lastname'),
             'email' => request('email'),
             'password' => bcrypt(request('password')),
-            'role_id' => DB::table('roles')->where('name', request('type'))->first()->id
+            'role_id' => DB::table('roles')->where('name', request('type'))->first()->id,
+            'rating' => 0
         ]);
         $user->save();
         //Redirect to home page

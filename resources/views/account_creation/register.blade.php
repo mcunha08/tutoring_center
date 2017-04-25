@@ -64,6 +64,7 @@
                     <select name="type">
                         <option value="tutor">Tutor</option>
                         <option value="student">Student</option>
+                        <option value="instructor">instructor</option>
                     </select>
                     </div>
                 </div>
