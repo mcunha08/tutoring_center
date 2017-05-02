@@ -11,7 +11,7 @@ class InstructorController extends Controller
 //        dd(auth()->user());
         if(auth()->check())
         {
-            if(auth()->user()->role_id == Role::where('name', 'Instructor')){
+            if(auth()->user()->role_id == Role::where('name', 'Instructor')->first()->id){
                 return view('instructors.super_secret');
             }
         }
