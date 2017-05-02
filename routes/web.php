@@ -22,4 +22,7 @@ Route::get('/tutors', 'TutorController@list');
 Route::get('/tutors_list/{userid}', 'TutorController@show');
 Route::get('/supersecret', 'InstructorController@supersecret');
 Route::post('/tutor_detail', 'TutorController@store');
+Route::get('/logout', 'SessionCreationController@destroy');
+Route::post('/namesearch', 'SearchController@name_search');
+Route::get('/search', 'SearchController@search');
 //Route::post('/login')

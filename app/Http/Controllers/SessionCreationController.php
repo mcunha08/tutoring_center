@@ -18,4 +18,9 @@ class SessionCreationController extends Controller
         //If we found the user, redirect to home page
         //If we couldn't find the user, go back to log in
     }
+
+    public function destroy(){
+        auth()->logout();
+        return redirect('/');
+    }
 }

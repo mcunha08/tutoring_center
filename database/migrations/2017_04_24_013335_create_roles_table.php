@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+use App\Role;
 class CreateRolesTable extends Migration
 {
     /**
@@ -18,7 +18,9 @@ class CreateRolesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
-
+        Role::create(['name' => 'Instructor']);
+        Role::create(['name' => 'Student']);
+        Role::create(['name' => 'Tutor']);
     }
 
     /**

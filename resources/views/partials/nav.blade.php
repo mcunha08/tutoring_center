@@ -1,6 +1,4 @@
 <nav>
-
-
     <div class="nav">
         <ul>
             <li>
@@ -12,9 +10,18 @@
             <li>
                 <a href="/tutors">View Tutors</a>
             </li>
-            @if(!Auth::check())
+            <li>
+                <a href="/search">Search Tutors</a>
+            </li>
+
+        @if(!Auth::check())
                 <li>
                     <a  href="/login">Login</a>
+                </li>
+            @endif
+            @if(Auth::check())
+                <li>
+                    <a  href="/logout">Logout</a>
                 </li>
             @endif
             @if(Auth::check())
@@ -22,11 +29,11 @@
                     <a  href="#">Hello, {{ Auth::user()->firstname }}</a>
                 </li>
             @endif
+
         </ul>
     </div>
-        {{--<ul class="navbar-nav mr-auto">--}}
-            {{----}}
-        {{--</ul>--}}
 
+    <br/>
+    </div>
 
 </nav>
