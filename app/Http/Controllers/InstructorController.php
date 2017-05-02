@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Role;
 class InstructorController extends Controller
 {
     public function supersecret(){
@@ -11,7 +11,7 @@ class InstructorController extends Controller
 //        dd(auth()->user());
         if(auth()->check())
         {
-            if(auth()->user()->role_id == 3){
+            if(auth()->user()->role_id == Role::where('name', 'Instructor')){
                 return view('instructors.super_secret');
             }
         }
