@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use App\Log;
 class AccountCreationController extends Controller
 {
     public function create(){
@@ -25,6 +26,7 @@ class AccountCreationController extends Controller
             'rating' => 0
         ]);
         $user->save();
+        Log::create(['user_id'=>$user->id, 'log_body'=> sprintf("%s, %s has created an account (%s)", $user->lastname, $user->firstname, $user->email)]);
         //Redirect to home page
         return redirect('/');
     }

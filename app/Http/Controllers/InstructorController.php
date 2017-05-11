@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Role;
+use App\Log;
 class InstructorController extends Controller
 {
     public function supersecret(){
@@ -12,7 +13,8 @@ class InstructorController extends Controller
         if(auth()->check())
         {
             if(auth()->user()->role_id == Role::where('name', 'Instructor')->first()->id){
-                return view('instructors.super_secret');
+                $all_logs = Log::all();
+                return view('instructors.super_secret',compact('all_logs'));
             }
         }
 
