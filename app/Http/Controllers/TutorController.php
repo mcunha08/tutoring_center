@@ -23,13 +23,14 @@ class TutorController extends Controller
     public function store(){
         if(!auth()->check()) {
             return redirect('/');
-        }
+        }else{
         $user = User::find(request('userid'));
         $user->rating = request('rating');
         $user->save();
         $tutors = User::all()->where('role_id', Role::where('name', 'Tutor')->first()->id);
         Log::create(['user_id'=>Auth::user()->id, 'log_body'=> sprintf("%s, %s has updated %s, %s's rating (%s)", Auth::user()->lastname, Auth::user()->firstname, $user->lastname, $user->firstname, Auth::user()->email)]);
         return view('tutors.tutor_list', compact('tutors'));
+        }
     }
 
 }
