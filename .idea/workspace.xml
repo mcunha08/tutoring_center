@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3e7ce2a-2f0c-417f-8892-b5a897c36981" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AccountCreationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccountCreationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InstructorController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InstructorController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SessionCreationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionCreationController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TutorController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TutorController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/instructors/super_secret.blade.php" afterPath="$PROJECT_DIR$/resources/views/instructors/super_secret.blade.php" />
     </list>
     <ignored path="tutoring_center.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,7 +102,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="super_secret.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="super_secret.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/instructors/super_secret.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -130,12 +127,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TutorController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TutorController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TutorController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="238">
+              <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,9 +175,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/AccountCreationController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/InstructorController.php" />
         <option value="$PROJECT_DIR$/app/Log.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TutorController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SessionCreationController.php" />
         <option value="$PROJECT_DIR$/resources/views/instructors/super_secret.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TutorController.php" />
       </list>
     </option>
   </component>
@@ -613,7 +612,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28665000" />
+    <option name="totallyTimeSpent" value="28952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1039,16 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccountCreationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Role.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1103,14 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TutorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1128,6 +1109,26 @@
             <marker date="1494507170333" expanded="true" signature="37:46" ph="..." />
             <marker date="1494507170333" expanded="true" signature="404:422" ph="..." />
             <marker date="1494507170333" expanded="true" signature="428:444" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccountCreationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TutorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

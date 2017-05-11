@@ -21,7 +21,7 @@ class TutorController extends Controller
         return view('tutors.show',compact('user'));
     }
     public function store(){
-        if(auth()->check()) {
+        if(!auth()->check()) {
             return redirect('/');
         }
         $user = User::find(request('userid'));
