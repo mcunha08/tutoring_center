@@ -25,4 +25,6 @@ Route::post('/tutor_detail', 'TutorController@store');
 Route::get('/logout', 'SessionCreationController@destroy');
 Route::post('/namesearch', 'SearchController@name_search');
 Route::get('/search', 'SearchController@search');
+Route::post('/supersecret_tutor_search','InstructorController@supersecret_tutor_search');
+Route::post('/supersecret_student_search','InstructorController@supersecret_student_search');
 //Route::post('/login')
