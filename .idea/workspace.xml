@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3e7ce2a-2f0c-417f-8892-b5a897c36981" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InstructorController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InstructorController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/instructors/super_secret_search_results.blade.php" afterPath="$PROJECT_DIR$/resources/views/instructors/super_secret_search_results.blade.php" />
-    </list>
+    <list default="true" id="e3e7ce2a-2f0c-417f-8892-b5a897c36981" name="Default" comment="" />
     <ignored path="tutoring_center.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -30,7 +26,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="18" column="111" lean-forward="false" selection-start-line="18" selection-start-column="111" selection-end-line="18" selection-end-column="111" />
-              <folding />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,9 +38,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,7 +81,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
               <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="93" />
-              <folding />
+              <folding>
+                <element signature="e#7#389#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,10 +92,10 @@
         <entry file="file://$PROJECT_DIR$/resources/views/instructors/super_secret_search_results.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="94" lean-forward="false" selection-start-line="7" selection-start-column="94" selection-end-line="7" selection-end-column="94" />
+              <caret line="7" column="95" lean-forward="false" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
               <folding>
-                <marker date="1494594878932" expanded="true" signature="9:25" ph="..." />
-                <marker date="1494594878932" expanded="true" signature="37:46" ph="..." />
+                <marker date="1494636961113" expanded="true" signature="9:25" ph="..." />
+                <marker date="1494636961113" expanded="true" signature="37:46" ph="..." />
               </folding>
             </state>
           </provider>
@@ -129,7 +127,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#40#85#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,9 +139,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -661,12 +659,12 @@
       <workItem from="1493684133813" duration="5192000" />
       <workItem from="1493689926307" duration="2121000" />
       <workItem from="1494558925329" duration="3129000" />
-      <workItem from="1494594404179" duration="480000" />
+      <workItem from="1494594404179" duration="1401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32657000" />
+    <option name="totallyTimeSpent" value="33578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -797,9 +795,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -814,7 +810,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-          <folding />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1050,7 +1048,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="18" column="111" lean-forward="false" selection-start-line="18" selection-start-column="111" selection-end-line="18" selection-end-column="111" />
-          <folding />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1059,8 +1059,8 @@
         <state relative-caret-position="765">
           <caret line="45" column="11" lean-forward="false" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
           <folding>
-            <marker date="1494594878932" expanded="true" signature="9:25" ph="..." />
-            <marker date="1494594878932" expanded="true" signature="37:46" ph="..." />
+            <marker date="1494636961113" expanded="true" signature="9:25" ph="..." />
+            <marker date="1494636961113" expanded="true" signature="37:46" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1069,9 +1069,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1079,9 +1077,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1089,7 +1085,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="93" />
-          <folding />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1135,7 +1133,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#40#85#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1152,10 +1152,10 @@
     <entry file="file://$PROJECT_DIR$/resources/views/instructors/super_secret_search_results.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="94" lean-forward="false" selection-start-line="7" selection-start-column="94" selection-end-line="7" selection-end-column="94" />
+          <caret line="7" column="95" lean-forward="false" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="95" />
           <folding>
-            <marker date="1494594878932" expanded="true" signature="9:25" ph="..." />
-            <marker date="1494594878932" expanded="true" signature="37:46" ph="..." />
+            <marker date="1494636961113" expanded="true" signature="9:25" ph="..." />
+            <marker date="1494636961113" expanded="true" signature="37:46" ph="..." />
           </folding>
         </state>
       </provider>
