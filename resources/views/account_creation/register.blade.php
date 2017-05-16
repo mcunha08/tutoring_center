@@ -57,6 +57,32 @@
                     @endif
                 </div>
             </div>
+            <div class="form-group{{ $errors->has('majors') ? ' has-error' : '' }}">
+                <label for="majors" class="col-md-4 control-label">Major(s):</label>
+
+                <div class="col-md-6">
+                    <input id="majors" type="text" class="form-control" name="majors" value="{{ old('location') }}" required autofocus>
+
+                    @if ($errors->has('majors'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('majors') }}</strong>
+                                    </span>
+                    @endif
+                </div>
+            </div>
+            <div class="form-group{{ $errors->has('profile_picture') ? ' has-error' : '' }}">
+                <label for="profile_picture" class="col-md-4 control-label">Profile Picture</label>
+
+                <div class="col-md-6">
+                    <input id="profile_picture" type="file" class="form-control" name="profile_picture" required>
+
+                    @if ($errors->has('profile_picture'))
+                        <span class="help-block">
+                                        <strong>{{ $errors->first('profile_picture') }}</strong>
+                                    </span>
+                    @endif
+                </div>
+            </div>
             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                 <label for="password" class="col-md-4 control-label">Password</label>
 

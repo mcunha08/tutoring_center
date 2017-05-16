@@ -6,7 +6,11 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+//use App\Http\Requests\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Auth;
+use App\Log;
 class RegisterController extends Controller
 {
     /*
@@ -48,9 +52,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+//            'name' => 'required|string|max:255',
+//            'email' => 'required|string|email|max:255|unique:users',
+//            'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
@@ -62,10 +66,50 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+//        dd($data);
+        //Create a new user
+        if(!ends_with(request('email'),'wou.edu')){
+            return back()->withError(['message'=>'Only WOU emails are allowed']);
+        }
+
+        $user = User::create([
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'location' => $data['location'],
             'email' => $data['email'],
+            'majors' => $data['majors'],
             'password' => bcrypt($data['password']),
+//            'profile_picture' => $data['file'],
+            'role_id' => DB::table('roles')->where('name', $data['type'])->first()->id,
+            'rating' => 0
         ]);
+        $user->save();
+        Log::create(['user_id'=>$user->id, 'log_body'=> sprintf("%s, %s has created an account (%s)", $user->lastname, $user->firstname, $user->email)]);
+        return $user;
+        //Redirect to home page
+
+    }
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+//        event(new Registered($user = $this->create($request->all())));
+//        dd($user);
+//        dd($request->all());
+//        dd(request()->profile_picture);
+//        if(request()->hasFile('profile_picture')) {
+//            dd('here');
+//            $file = request()->file('profile_picture')->store('public');
+//        }
+//        else{
+//            dd('there');
+//            return back()->withErrors(['message'=>'Please upload your student id']);
+//        }
+        $user = $this->create($request->all());
+        return redirect('/');
+//        Auth::login($user);
+//        $this->guard()->login($user);
+//        return $this->registered($request, $user)
+//            ?: redirect($this->redirectPath());
+
     }
 }

@@ -28,3 +28,6 @@ Route::get('/search', 'SearchController@search');
 Route::post('/supersecret_tutor_search','InstructorController@supersecret_tutor_search');
 Route::post('/supersecret_student_search','InstructorController@supersecret_student_search');
 //Route::post('/login')
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
