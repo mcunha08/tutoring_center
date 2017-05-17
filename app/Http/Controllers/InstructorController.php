@@ -8,17 +8,18 @@ use App\Log;
 use App\User;
 class InstructorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function supersecret(){
         //If instructor take them to super secret page
-//        dd(auth()->user());
-        if(auth()->check())
-        {
+
             if(auth()->user()->role_id == Role::where('name', 'Instructor')->first()->id){
                 $all_logs = Log::all();
                 return view('instructors.super_secret',compact('all_logs'));
             }
-        }
-
             //If not instructor, go to home page
 
         return redirect('/');

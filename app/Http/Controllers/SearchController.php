@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\User;
 class SearchController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function search(){
         $locations = User::select('location')->groupby('location')->get();
 //        dd($locations);

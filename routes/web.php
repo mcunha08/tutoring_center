@@ -31,3 +31,7 @@ Route::post('/supersecret_student_search','InstructorController@supersecret_stud
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

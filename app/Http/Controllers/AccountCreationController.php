@@ -8,6 +8,11 @@ use App\User;
 use App\Log;
 class AccountCreationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function create(){
         return view('account_creation.register');
     }
