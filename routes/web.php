@@ -25,6 +25,10 @@ Route::post('/tutor_detail', 'TutorController@store');
 Route::get('/logout', 'SessionCreationController@destroy');
 Route::post('/namesearch', 'SearchController@name_search');
 Route::get('/search', 'SearchController@search');
+Route::get('/edit_profile','TutorController@edit_profile');
+Route::get('/email_tutor/{id}','TutorController@email_tutor_show');
+Route::post('/email_tutor','TutorController@email_tutor_send');
+Route::post('/edit_profile','TutorController@update_profile');
 Route::post('/supersecret_tutor_search','InstructorController@supersecret_tutor_search');
 Route::post('/supersecret_student_search','InstructorController@supersecret_student_search');
 //Route::post('/login')

@@ -26,7 +26,7 @@
             @endif
             @if(Auth::check())
                 <li>
-                    <a  href="#">Hello, {{ Auth::user()->firstname }}</a>
+                    <a  href="/tutors_list/{{ Auth::user()->id }}">Hello, {{ Auth::user()->firstname }}</a>
                 </li>
             @endif
 

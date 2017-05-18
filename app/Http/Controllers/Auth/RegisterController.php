@@ -72,6 +72,12 @@ class RegisterController extends Controller
             return back()->withError(['message'=>'Only WOU emails are allowed']);
         }
 
+        if(request()->hasFile('profile_picture')) {
+            $file = request()->file('profile_picture')->store('public');
+        }
+        else{
+            return back()->withErrors(['message'=>'Please upload your student id']);
+        }
         $user = User::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
@@ -79,7 +85,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'majors' => $data['majors'],
             'password' => bcrypt($data['password']),
-//            'profile_picture' => $data['file'],
+            'date_of_birth' => $data['birth_date'],
+            'profile_picture' => $file,
             'role_id' => DB::table('roles')->where('name', $data['type'])->first()->id,
             'rating' => 0
         ]);
@@ -96,14 +103,7 @@ class RegisterController extends Controller
 //        dd($user);
 //        dd($request->all());
 //        dd(request()->profile_picture);
-//        if(request()->hasFile('profile_picture')) {
-//            dd('here');
-//            $file = request()->file('profile_picture')->store('public');
-//        }
-//        else{
-//            dd('there');
-//            return back()->withErrors(['message'=>'Please upload your student id']);
-//        }
+
         $user = $this->create($request->all());
         return redirect('/');
 //        Auth::login($user);
