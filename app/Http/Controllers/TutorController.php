@@ -24,6 +24,7 @@ class TutorController extends Controller
     }
     public function show($id){
         $user = User::find($id);
+        dd({{ Storage::disk('local')->url($user->studentid) }});
         return view('tutors.show',compact('user'));
     }
     public function edit_profile(){
