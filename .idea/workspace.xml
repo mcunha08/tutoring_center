@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3e7ce2a-2f0c-417f-8892-b5a897c36981" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/tutoring_center.iml" afterPath="$PROJECT_DIR$/.idea/tutoring_center.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TutorController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TutorController.php" />
     </list>
     <ignored path="tutoring_center.iws" />
@@ -39,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TutorController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="243">
-              <caret line="26" column="64" lean-forward="false" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+              <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -459,12 +457,12 @@
       <workItem from="1494558925329" duration="3129000" />
       <workItem from="1494594404179" duration="1401000" />
       <workItem from="1494898654248" duration="15888000" />
-      <workItem from="1495167770996" duration="260000" />
+      <workItem from="1495167770996" duration="339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49726000" />
+    <option name="totallyTimeSpent" value="49805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -911,7 +909,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TutorController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
-          <caret line="26" column="64" lean-forward="false" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+          <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
           <folding />
         </state>
       </provider>
