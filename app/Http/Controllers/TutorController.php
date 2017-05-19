@@ -8,6 +8,7 @@ use App\Role;
 use App\Log;
 use Illuminate\Support\Facades\Auth;
 use Mail;
+use Storage;
 class TutorController extends Controller
 {
     public function __construct()
