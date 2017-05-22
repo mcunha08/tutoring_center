@@ -41,7 +41,7 @@ class TutorController extends Controller
         $user->availability = request('availability');
         $user->calendar = request('calendar_link');
         if(request()->hasFile('profile_picture')) {
-            $file = request()->file('profile_picture')->store('local');
+            $file = request()->file('profile_picture')->store('public');
         }
         else{
             return back()->withErrors(['message'=>'Please upload your student id']);
