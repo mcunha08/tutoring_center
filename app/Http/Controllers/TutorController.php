@@ -9,6 +9,7 @@ use App\Log;
 use Illuminate\Support\Facades\Auth;
 use Mail;
 use Storage;
+use DB;
 class TutorController extends Controller
 {
     public function __construct()
@@ -65,12 +66,18 @@ class TutorController extends Controller
         });
         return redirect('/tutors_list/' . $user->id);
     }
-    public function store(){
+    public function store()
+    {
+        DB::table('usersratings')->insert(
+            ['user_id' => Auth::user()->id, 'tutor_id' => request('userid'), 'rating' => request('rating')]
+        );
         $user = User::find(request('userid'));
-        $user->rating = request('rating');
+        $user->rating = DB::table('usersratings')
+            ->where('tutor_id', request('userid'))
+            ->avg('rating');
         $user->save();
         $tutors = User::all()->where('role_id', Role::where('name', 'Tutor')->first()->id);
-        Log::create(['user_id'=>Auth::user()->id, 'log_body'=> sprintf("%s, %s has updated %s, %s's rating (%s)", Auth::user()->lastname, Auth::user()->firstname, $user->lastname, $user->firstname, Auth::user()->email)]);
+        Log::create(['user_id' => Auth::user()->id, 'log_body' => sprintf("%s, %s has updated %s, %s's rating (%s)", Auth::user()->lastname, Auth::user()->firstname, $user->lastname, $user->firstname, Auth::user()->email)]);
         return view('tutors.tutor_list', compact('tutors'));
     }
 

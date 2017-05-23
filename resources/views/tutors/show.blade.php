@@ -3,8 +3,10 @@
 @section('content')
     <div class="starter-template">
         {{--<div class="col-md-12 text-center">--}}
+        <div style="float:left">
             <img height="100px" width="100px" src="{{ Storage::disk('local')->url($user->profile_picture) }}"></img>
-        {{--</div>--}}
+        </div>
+            {{--</div>--}}
         <div class="col-md-12 text-center">
             <label for="firstname" class="col-md-4 control-label">First Name: {{ $user->firstname }}</label>
             </div>

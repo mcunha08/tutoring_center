@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password', 'role_id', 'rating', 'location', 'majors', 'profile_picture', 'date_of_birth', 'availability'
+        'firstname', 'lastname', 'email', 'password', 'role_id', 'rating', 'location', 'majors', 'profile_picture', 'date_of_birth', 'availability', 'calendar'
     ];
 
     /**
@@ -29,5 +29,14 @@ class User extends Authenticatable
 
     public function roles(){
         $this->belongsTo(Role::class);
+    }
+    public function referrerUser()
+    {
+        return $this->belongsTo('App\User', 'id', 'referrer_id');
+    }
+
+    public function referredUsers()
+    {
+        return $this->hasMany('App\User', 'referrer_id', 'id');
     }
 }
