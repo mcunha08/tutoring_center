@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Mail;
 use Storage;
 use DB;
+use Carbon\Carbon;
 class TutorController extends Controller
 {
     public function __construct()
@@ -26,6 +27,7 @@ class TutorController extends Controller
     }
     public function show($id){
         $user = User::find($id);
+//        dd($user);
 //        dd( Storage::disk('local')->url($user->profile_picture) );
         return view('tutors.show',compact('user'));
     }
@@ -68,13 +70,28 @@ class TutorController extends Controller
     }
     public function store()
     {
+        $rating = floatValue(request('rating'));
+        $rating_entry = DB::table('usersratings')->where('tutor_id', request('userid'))->where('user_id', auth()->user()->id)->orderBy('created_at', 'DESC')->first();
+        if(!is_null($rating_entry)){
+            $rating_date = Carbon::parse($rating_entry->created_at);
+            $now = Carbon::now();
+            if($now->diffInHours($rating_date) < 24){
+                return back()->withErrors("You can only provide a rating once every 24 hours");
+            }
+        }
+        if(request('rating') < 0 || request('rating') > 10){
+            return back()->withErrors("Rating must be between 0 and 10");
+        }
         DB::table('usersratings')->insert(
-            ['user_id' => Auth::user()->id, 'tutor_id' => request('userid'), 'rating' => request('rating')]
+            ['user_id' => Auth::user()->id, 'tutor_id' => request('userid'), 'rating' => request('rating'), 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]
         );
         $user = User::find(request('userid'));
+
+
         $user->rating = DB::table('usersratings')
             ->where('tutor_id', request('userid'))
             ->avg('rating');
+
         $user->save();
         $tutors = User::all()->where('role_id', Role::where('name', 'Tutor')->first()->id);
         Log::create(['user_id' => Auth::user()->id, 'log_body' => sprintf("%s, %s has updated %s, %s's rating (%s)", Auth::user()->lastname, Auth::user()->firstname, $user->lastname, $user->firstname, Auth::user()->email)]);

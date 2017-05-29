@@ -4,9 +4,11 @@
             <li>
                 <a href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li>
-                <a href="/register">Create an Account</a>
-            </li>
+            @if(!Auth::check())
+                <li>
+                    <a href="/register">Create an Account</a>
+                </li>
+            @endif
             <li>
                 <a href="/tutors">View Tutors</a>
             </li>

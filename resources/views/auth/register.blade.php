@@ -88,15 +88,15 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('birth_date') ? ' has-error' : '' }}">
-                            <label for="birth_date" class="col-md-4 control-label">Birth Date</label>
+                        <div class="form-group{{ $errors->has('first_date_of_attendance') ? ' has-error' : '' }}">
+                            <label for="first_date_of_attendance" class="col-md-4 control-label">First date of attendance</label>
 
                             <div class="col-md-6">
-                                <input id="birth_date" type="date" class="form-control" name="birth_date" required>
+                                <input id="first_date_of_attendance" type="date" class="form-control" name="first_date_of_attendance" required>
 
-                                @if ($errors->has('birth_date'))
+                                @if ($errors->has('first_date_of_attendance'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('birth_date') }}</strong>
+                                        <strong>{{ $errors->first('first_date_of_attendance') }}</strong>
                                     </span>
                                 @endif
                             </div>

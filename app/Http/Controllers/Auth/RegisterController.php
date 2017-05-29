@@ -85,7 +85,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'majors' => $data['majors'],
             'password' => bcrypt($data['password']),
-            'date_of_birth' => $data['birth_date'],
+            'first_date_of_attendance' => $data['first_date_of_attendance'],
             'profile_picture' => $file,
             'role_id' => DB::table('roles')->where('name', $data['type'])->first()->id,
             'rating' => 0
@@ -99,17 +99,7 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
-//        event(new Registered($user = $this->create($request->all())));
-//        dd($user);
-//        dd($request->all());
-//        dd(request()->profile_picture);
-
         $user = $this->create($request->all());
         return redirect('/');
-//        Auth::login($user);
-//        $this->guard()->login($user);
-//        return $this->registered($request, $user)
-//            ?: redirect($this->redirectPath());
-
     }
 }

@@ -31,7 +31,9 @@ Route::post('/email_tutor','TutorController@email_tutor_send');
 Route::post('/edit_profile','TutorController@update_profile');
 Route::post('/supersecret_tutor_search','InstructorController@supersecret_tutor_search');
 Route::post('/supersecret_student_search','InstructorController@supersecret_student_search');
-//Route::post('/login')
+Route::get('/student_list', 'InstructorController@student_list');
+Route::get ('/inactivate/{id}', 'InstructorController@inactivate');
+Route::get ('/activate/{id}', 'InstructorController@activate');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

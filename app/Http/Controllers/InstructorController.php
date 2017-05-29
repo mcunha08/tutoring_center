@@ -38,5 +38,21 @@ class InstructorController extends Controller
         $results = User::where('lastname', 'like', '%' . request('namesearch') .'%')->where('role_id', $role_id)->get();
         return view('instructors.super_secret_search_results', compact('search_string', 'type', 'results', 'role_id'));
     }
+    public function student_list(){
+        $users = User::all();
+        return view('instructors.student_list', compact('users'));
+    }
+    public function activate($id){
+        $user = User::find($id);
+        $user->active = true;
+        $user->save();
+        return back();
+    }
+    public function inactivate($id){
+        $user = User::find($id);
+        $user->active = false;
+        $user->save();
+        return back();
+    }
 
 }

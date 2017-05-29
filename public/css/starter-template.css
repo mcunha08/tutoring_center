@@ -1,17 +1,19 @@
 
 .starter-template {
     padding: 3rem 1.5rem;
-    text-align: center;
+    /*text-align: center;*/
 }
 body {
     margin: 0;
     padding: 0;
-    background: #ccc;
+    background: white;
 }
-
+.home-body{
+    text-align:center;
+}
 .nav ul {
     list-style: none;
-    background-color: #444;
+    background-color: #e24136;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -32,7 +34,7 @@ body {
 }
 
 .nav a:hover {
-    background-color: #005f5f;
+    background-color: #a3322a;
 }
 
 .nav a.active {
@@ -44,12 +46,15 @@ body {
 @media screen and (min-width: 600px) {
     .nav li {
         width: 200px;
-        border: 2px solid #000000;
+        border-right: 1px solid black;
         border-top:none;
         border-bottom: none;
         height: 50px;
         line-height: 50px;
         font-size: 1.4em;
+    }
+    .nav li:first-child{
+        border-left:1px solid black;
     }
 
     /* Option 1 - Display Inline */
@@ -57,4 +62,14 @@ body {
         display: inline-block;
         margin-right: -4px;
     }
+}
+table{
+    align:left;
+}
+table th, table td{
+  align:left;
+  padding-left:5px;
+}
+table img{
+    max-width: 100px;
 }

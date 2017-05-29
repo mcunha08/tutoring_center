@@ -3,35 +3,39 @@
 @section('content')
     <form method="POST" action="/namesearch">
         {{ csrf_field() }}
-        <div class="form-group{{ $errors->has('namesearch') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('namesearch') ? ' has-error' : '' }} col-md-12 search-form">
             <label for="namesearch" class="col-md-3 control-label">Search By Name:</label>
-
-            <div class="col-md-12">
-                <input id="namesearch" type="text" class="form-control" name="namesearch" value="{{ old('name') }}" autofocus>
+            <div class="col-md-6">
+                <input id="namesearch" type="text" class="form-control" name="namesearch" value="{{ old('name') }}"
+                       autofocus>
 
                 @if ($errors->has('namesearch'))
                     <span class="help-block">
-                                    <strong>{{ $errors->first('namesearch') }}</strong>
-                                </span>
+                        <strong>{{ $errors->first('namesearch') }}</strong>
+                    </span>
                 @endif
             </div>
-            <div class="col-md-12">
-                <label for="locationlist" class="col-md-3 control-label">Search By Location:</label>
+        </div>
+        <div class="col-md-12 search-form form-group">
+            <label for="locationlist" class="col-md-3 control-label">Search By Location:</label>
+            <div class="col-md-6">
                 <select name="locationlist">
                     <option value=""></option>
                     @foreach($locations as $location)
                         <option value="{{ $location->location }}">{{ $location->location }}</option>
                     @endforeach
                 </select>
-                @if ($errors->has('locationlist'))
-                    <span class="help-block">
-                                        <strong>{{ $errors->first('locationlist') }}</strong>
-                                    </span>
-                @endif
             </div>
+            @if ($errors->has('locationlist'))
+                <span class="help-block">
+                        <strong>{{ $errors->first('locationlist') }}</strong>
+                    </span>
+            @endif
+        </div>
+        <div class="col-md-12 search-form form-group">
             <label for="ratingsearch" class="col-md-3 control-label">Search By Rating:</label>
 
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <select name="ratingsearch">
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -47,15 +51,15 @@
                 </select>
                 @if ($errors->has('ratingsearch'))
                     <span class="help-block">
-                                    <strong>{{ $errors->first('ratingsearch') }}</strong>
-                                </span>
+                            <strong>{{ $errors->first('ratingsearch') }}</strong>
+                        </span>
                 @endif
             </div>
-            <div class="col-md-6 col-md-offset-4">
-                <button type="submit" class="btn btn-primary">
-                    Submit
-                </button>
-            </div>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">Submit
+            </button>
+        </div>
         </div>
     </form>
 @endsection

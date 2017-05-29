@@ -8,11 +8,18 @@
 
     @include('partials.nav')
     <div class="container">
-
-        @yield('content')
-
+        <div class="row">
+            @yield('content')
+        </div>
     </div><!-- /.container -->
 
+    <div class="alert alert-error">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error}}</li>
+            @endforeach
+        </ul>
+    </div>
     @include('partials.footer')
 
 </body>

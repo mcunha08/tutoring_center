@@ -38,6 +38,7 @@
         <br/>
         <br/>
         <br/>
+        <a href="/student_list"><h2>Click here to view list of students</h2></a>
         <h2>Tutoring sessions:</h2>
         (Blank because tutoring sessions haven't been implemented)
         <h2>Tutoring charges:</h2>
