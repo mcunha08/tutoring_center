@@ -18,7 +18,7 @@ class TutorController extends Controller
         $this->middleware('auth');
     }
 
-    public function list(){
+    public function tutor_list(){
         //Where role_id = Tutor
         //TODO this is really low level
         $tutors = User::all()->where('role_id', Role::where('name', 'Tutor')->first()->id);

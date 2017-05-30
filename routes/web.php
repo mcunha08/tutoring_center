@@ -18,7 +18,7 @@ Route::get('/register', 'AccountCreationController@create');
 Route::post('/register', 'AccountCreationController@store');
 Route::get('/login', 'SessionCreationController@create');
 Route::post('/login', 'SessionCreationController@store');
-Route::get('/tutors', 'TutorController@list');
+Route::get('/tutors', 'TutorController@tutor_list');
 Route::get('/tutors_list/{userid}', 'TutorController@show');
 Route::get('/supersecret', 'InstructorController@supersecret');
 Route::post('/tutor_detail', 'TutorController@store');
