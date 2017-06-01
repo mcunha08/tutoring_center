@@ -12,10 +12,15 @@
             <li>
                 <a href="/tutors">View Tutors</a>
             </li>
+            @if(Auth::check() && auth()->user()->role_id != 1)
             <li>
                 <a href="/search">Search Tutors</a>
             </li>
+            @endif
+        @if(Auth::check() &&  auth()->user()->role_id == 1)
+            <li><a href="/supersecret">Instructor Page</a></li>
 
+            @endif
         @if(!Auth::check())
                 <li>
                     <a  href="/login">Login</a>
@@ -31,6 +36,7 @@
                     <a  href="/tutors_list/{{ Auth::user()->id }}">Hello, {{ Auth::user()->firstname }}</a>
                 </li>
             @endif
+
 
         </ul>
     </div>

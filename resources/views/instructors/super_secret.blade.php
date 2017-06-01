@@ -2,52 +2,66 @@
 
 @section('content')
     <div class="starter-template">
-        Search for Tutor by name:
+
         <form method="POST" action="/supersecret_tutor_search">
             {{ csrf_field() }}
+
             <div class="form-group{{ $errors->has('namesearch') ? ' has-error' : '' }}">
                 <div class="col-md-12">
-                    <input id="namesearch" type="text" class="form-control" name="namesearch" value="{{ old('name') }}" autofocus>
+                    <div class="col-md-3">
+                        Search for Tutor by name:
+                    </div>
+                    <div class="col-md-6">
+                        <input id="namesearch" type="text" class="form-control" name="namesearch"
+                               value="{{ old('name') }}" autofocus>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
                 </div>
-                <div class="col-md-6 col-md-offset-4">
-                    <button type="submit" class="btn btn-primary">
-                        Submit
-                    </button>
-                </div>
-            </div>
         </form>
         <br/>
         <br/>
         <br/>
         <br/>
-        Search for Student by name:
+
         <form method="POST" action="/supersecret_student_search">
             {{ csrf_field() }}
             <div class="form-group{{ $errors->has('namesearch') ? ' has-error' : '' }}">
                 <div class="col-md-12">
-                    <input id="namesearch" type="text" class="form-control" name="namesearch" value="{{ old('name') }}" autofocus>
+                    <div class="col-md-3">
+                        Search for Student by name:
+                    </div>
+                    <div class="col-md-6">
+                        <input id="namesearch" type="text" class="form-control" name="namesearch"
+                               value="{{ old('name') }}" autofocus>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
                 </div>
-                <div class="col-md-6 col-md-offset-4">
-                    <button type="submit" class="btn btn-primary">
-                        Submit
-                    </button>
-                </div>
-            </div>
         </form>
         <br/>
         <br/>
+        <a href="/student_list"><h2>Click here to view list of all users</h2></a>
         <br/>
         <br/>
-        <a href="/student_list"><h2>Click here to view list of students</h2></a>
-        <h2>Tutoring sessions:</h2>
-        (Blank because tutoring sessions haven't been implemented)
-        <h2>Tutoring charges:</h2>
-        (Blank because we don't have a system for tutors to charge money yet)
-        <h1>All activity</h1>
-        <ul>
-            @foreach($all_logs as $log)
-                <li>{{ $log->created_at }}: {{ $log->log_body }}</li>
-            @endforeach
-        </ul>
+        <h1>Activity log:</h1>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th style="padding-left: 20px">Log Body</th>
+            </tr>
+        @foreach($all_logs as $log)
+            <tr>
+                <td>{{ $log->created_at }}</td>
+                <td style="padding-left: 20px">{{ $log->log_body }}</td>
+            </tr>
+        @endforeach
+        </table>
     </div>
 @endsection

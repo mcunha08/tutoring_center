@@ -50,6 +50,7 @@ class TutorController extends Controller
             return back()->withErrors(['message'=>'Please upload your student id']);
         }
         $user->profile_picture = $file;
+        $user->first_date_of_attendance = request('first_date_of_attendance');
         $user->save();
         return redirect('/tutors_list/' . Auth::user()->id);
     }

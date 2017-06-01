@@ -6,14 +6,22 @@
 body {
     margin: 0;
     padding: 0;
-    background: white;
+
 }
+/*.background-home {*/
+    /*background: #FFFFFF;*/
+    /*background-image: url('/images/WOU.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    /*background-position: 50% calc(50% + 300px);*/
+
+/*}*/
 .home-body{
     text-align:center;
 }
 .nav ul {
     list-style: none;
-    background-color: #e24136;
+    background-color: #A60800;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -34,7 +42,7 @@ body {
 }
 
 .nav a:hover {
-    background-color: #a3322a;
+    background-color: #C24136;
 }
 
 .nav a.active {
@@ -68,7 +76,12 @@ table{
 }
 table th, table td{
   align:left;
-  padding-left:5px;
+  padding-left:20px;
+}
+.email-calendar-button{
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
 }
 table img{
     max-width: 100px;

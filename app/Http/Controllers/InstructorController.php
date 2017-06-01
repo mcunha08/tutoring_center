@@ -22,20 +22,20 @@ class InstructorController extends Controller
             }
             //If not instructor, go to home page
 
-        return redirect('/');
+        return redirect('/')->withErrors('You are not an instructor, so you cannot access that page');
     }
     public function supersecret_tutor_search(){
         $search_string = request('namesearch');
         $role_id = Role::where('name', 'Tutor')->first()->id;
         $type = 'Tutor';
-        $results = User::where('lastname', 'like', '%' . request('namesearch') .'%')->where('role_id', $role_id)->get();
+        $results = User::where('lastname', 'like', request('namesearch') .'%')->where('role_id', $role_id)->get();
         return view('instructors.super_secret_search_results', compact('search_string', 'type', 'results', 'role_id'));
     }
     public function supersecret_student_search(){
         $search_string = request('namesearch');
         $role_id = Role::where('name', 'Student')->first()->id;
         $type = 'Student';
-        $results = User::where('lastname', 'like', '%' . request('namesearch') .'%')->where('role_id', $role_id)->get();
+        $results = User::where('lastname', 'like', request('namesearch') .'%')->where('role_id', $role_id)->get();
         return view('instructors.super_secret_search_results', compact('search_string', 'type', 'results', 'role_id'));
     }
     public function student_list(){

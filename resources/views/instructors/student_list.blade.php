@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="starter-template">
-        <h1 style="border-bottom:2px solid black">List of all tutors</h1>
+        <h1 style="border-bottom:2px solid black">List of all users</h1>
         <table>
             <tr>
                 <th>Name</th>

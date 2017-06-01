@@ -21,7 +21,7 @@ class SearchController extends Controller
         if(empty(request('locationlist'))){
             request()->locationlist = '%';
         }
-        $tutors = User::where('lastname', 'like', '%' . request("namesearch") . '%')->where('location', 'like', request()->locationlist)->where('rating', '>=', request('ratingsearch'))->get();
+        $tutors = User::where('lastname', 'like', request("namesearch") . '%')->where('location', 'like', request()->locationlist)->where('rating', '>=', request('ratingsearch'))->get();
         return view('searches.search_results', compact('tutors'));
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
@@ -88,6 +88,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('first_date_of_attendance') ? ' has-error' : '' }}">
+                            <label for="first_date_of_attendance" class="col-md-4 control-label">First date of attendance</label>
+
+                            <div class="col-md-6">
+                                <input id="first_date_of_attendance" type="date" class="form-control" name="first_date_of_attendance" required>
+
+                                @if ($errors->has('first_date_of_attendance'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('first_date_of_attendance') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('availability') ? ' has-error' : '' }}">
                             <label for="availability" class="col-md-4 control-label">Availability:</label>
 
@@ -105,7 +118,7 @@
                             <label for="calendar_link" class="col-md-4 control-label">Calendar Link:</label>
 
                             <div class="col-md-6">
-                                <input id="calendar_link" type="text" class="form-control" name="calendar_link" value="{{ Auth::user()->calendar_link  }}" required autofocus>
+                                <input id="calendar_link" type="text" class="form-control" name="calendar_link" value="{{ Auth::user()->calendar  }}" required autofocus>
 
                                 @if ($errors->has('calendar_link'))
                                     <span class="help-block">
@@ -117,7 +130,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                    Submit
                                 </button>
                             </div>
                         </div>
