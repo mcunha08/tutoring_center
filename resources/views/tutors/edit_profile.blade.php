@@ -101,6 +101,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('tutor_start') ? ' has-error' : '' }}">
+                            <label for="tutor_start" class="col-md-4 control-label">When you became a tutor:</label>
+
+                            <div class="col-md-6">
+                                <input id="tutor_start" type="date" class="form-control" name="tutor_start" required>
+
+                                @if ($errors->has('tutor_start'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tutor_start') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('availability') ? ' has-error' : '' }}">
                             <label for="availability" class="col-md-4 control-label">Availability:</label>
 

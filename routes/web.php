@@ -34,6 +34,8 @@ Route::post('/supersecret_student_search','InstructorController@supersecret_stud
 Route::get('/student_list', 'InstructorController@student_list');
 Route::get ('/inactivate/{id}', 'InstructorController@inactivate');
 Route::get ('/activate/{id}', 'InstructorController@activate');
+Route::get('/email_students', 'TutorController@email_all_students');
+Route::post('/email_students', 'TutorController@send_email_to_all_students');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

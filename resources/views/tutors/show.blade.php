@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    @if($user->id = Auth::user()->id)
+    @if($user->id == Auth::user()->id)
         <a href="/edit_profile" style="float:right">Edit your profile</a>
     @endif
     <div class="starter-template home-body">
@@ -27,11 +27,15 @@
             <label for="majors" class="col-md-12 control-label">First date of
                 attendance: {{ $user->first_date_of_attendance }}</label>
         </div>
+
         <div class="col-md-12">
             <label for="email" class="col-md-12 control-label">Majors: {{ $user->majors }}</label>
         </div>
         {{--TODO fix this--}}
         @if($user->role_id == 3)
+            <div class="col-md-12">
+                <label for="majors" class="col-md-12 control-label">Tutor since: {{ $user->tutor_start }}</label>
+            </div>
             <div class="col-md-12">
                 <label for="email" class="col-md-12 control-label">Availability: {{ $user->availability }}</label>
             </div>
@@ -41,10 +45,14 @@
             </div>
             <div class="col-md-12 home-body"><br/></div>
             <div class="col-md-12">
-                <a href="{{ $user->calendar }}" class="email-calendar-button" style="height:25px;padding:10px">Go to my
-                    Google Calendar</a>
+                <a href="{{ $user->calendar }}" class="email-calendar-button" style="height:25px;padding:10px">Go to my Google Calendar</a>
             </div>
-
+        @endif
+        @if($user->id == auth()->user()->id)
+            <div class="col-md-12 home-body"><br/></div>
+            <div class="col-md-12">
+                <a href="/email_students" class="email-calendar-button" style="height:25px;padding:10px">Email all students</a>
+            </div>
         @endif
         <div class="col-md-12 home-body"><br/></div>
         <div class="col-md-12">

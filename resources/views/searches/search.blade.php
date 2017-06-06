@@ -32,6 +32,19 @@
                     </span>
             @endif
         </div>
+        <div class="form-group{{ $errors->has('availability') ? ' has-error' : '' }} col-md-12 search-form">
+            <label for="availability" class="col-md-3 control-label">Search By Availability:</label>
+            <div class="col-md-6">
+                <input id="availability" type="text" class="form-control" name="availability" value="{{ old('name') }}"
+                       autofocus>
+
+                @if ($errors->has('availability'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('availability') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
         <div class="col-md-12 search-form form-group">
             <label for="ratingsearch" class="col-md-3 control-label">Search By Rating:</label>
 
