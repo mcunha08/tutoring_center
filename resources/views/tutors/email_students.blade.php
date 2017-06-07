@@ -5,7 +5,16 @@
     <form method="POST" action="/email_students">
 
         {{ csrf_field() }}
-
+        <div class="col-md-12 search-form form-group">
+            <label for="emaillist" class="col-md-3 control-label">Select student:</label>
+            <div class="col-md-6">
+                <select name="emaillist">
+                    <option value=""></option>
+                    @foreach($students as $student)
+                        <option value="{{ $student->id }}">{{ $student->email }}</option>
+                    @endforeach
+                </select>
+            </div>
         <div class="form-group{{ $errors->has('subject') ? ' has-error' : '' }}">
             <div class="col-md-12 text-center">
                 <label for="subject" class="col-md-3 control-label">Subject</label>

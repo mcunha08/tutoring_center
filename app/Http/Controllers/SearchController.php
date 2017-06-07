@@ -13,15 +13,21 @@ class SearchController extends Controller
 
     public function search(){
         $locations = User::select('location')->groupby('location')->get();
-//        dd($locations);
-        return view('searches.search',compact('locations'));
+        $majors = User::select('majors')->groupby('majors')->get();
+        return view('searches.search',compact('locations'), compact('majors'));
     }
     public function name_search(){
-//        dd(request()->all());
         if(empty(request('locationlist'))){
             request()->locationlist = '%';
         }
-        $tutors = User::where('lastname', 'like', request("namesearch") . '%')->where('location', 'like', request()->locationlist)->where('rating', '>=', request('ratingsearch'))->where('availability', 'like', '%' . request('availability') . '%')->get();
+        if(empty(request('majorlist'))){
+            request()->majorlist = '%';
+        }
+//        dd(request()->all());
+//        $tutors = User::where('lastname', 'like', null . '%')->where('location', 'like', request()->locationlist)->where('majors', 'like', request()->majorlist)->where('rating', '>=', request('ratingsearch'))->where('availability', 'like', '%' . request('availability') . '%')->get();
+//        dd($tutors);
+        $tutors = User::where('lastname', 'like', request("namesearch") . '%')->where('location', 'like', request()->locationlist)->where('majors', 'like', request()->majorlist)->where('rating', '>=', request('ratingsearch'))->where('availability', 'like', '%' . request('availability') . '%')->get();
+//        dd($tutors);
         return view('searches.search_results', compact('tutors'));
     }
 }

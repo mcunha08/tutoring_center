@@ -32,6 +32,22 @@
                     </span>
             @endif
         </div>
+        <div class="col-md-12 search-form form-group">
+        <label for="majorlist" class="col-md-3 control-label">Search By Major:</label>
+        <div class="col-md-6">
+            <select name="majorlist">
+                <option value=""></option>
+                @foreach($majors as $major)
+                    <option value="{{ $major->majors }}">{{ $major->majors }}</option>
+                @endforeach
+            </select>
+        </div>
+        @if ($errors->has('majorlist'))
+            <span class="help-block">
+                        <strong>{{ $errors->first('majorlist') }}</strong>
+                    </span>
+            @endif
+        </div>
         <div class="form-group{{ $errors->has('availability') ? ' has-error' : '' }} col-md-12 search-form">
             <label for="availability" class="col-md-3 control-label">Search By Availability:</label>
             <div class="col-md-6">

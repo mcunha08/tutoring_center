@@ -36,6 +36,8 @@ Route::get ('/inactivate/{id}', 'InstructorController@inactivate');
 Route::get ('/activate/{id}', 'InstructorController@activate');
 Route::get('/email_students', 'TutorController@email_all_students');
 Route::post('/email_students', 'TutorController@send_email_to_all_students');
+Route::get('/calculator/{id}', 'TutorController@calculator');
+Route::post('/calculator/', 'TutorController@calculate');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

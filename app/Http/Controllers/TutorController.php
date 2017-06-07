@@ -59,6 +59,7 @@ class TutorController extends Controller
         $user->profile_picture = $file;
         $user->first_date_of_attendance = request('first_date_of_attendance');
         $user->tutor_start = request('tutor_start');
+        $user->fee = request('fee');
         $user->save();
         return redirect('/tutors_list/' . Auth::user()->id);
     }
@@ -128,7 +129,8 @@ class TutorController extends Controller
 
     public function email_all_students()
     {
-        return view('tutors.email_students');
+        $students = User::where('role_id', 2)->get();
+        return view('tutors.email_students', compact('students'));
     }
 
     public function send_email_to_all_students()
@@ -136,12 +138,26 @@ class TutorController extends Controller
         $tutor = Auth::user();
         $subject = request('subject');
         $body = request('body');
-        foreach (User::where('role_id', 2)->get() as $user) {
+        $user = User::find(request('emaillist'));
+//        foreach (User::where('role_id', 2)->get() as $user) {
             Mail::send('emails.email_students', ['tutor' => $tutor, 'body' => $body], function ($m) use ($user, $subject) {
                 $m->from('woututorcen@gmail.com', 'Tutoring Center');
                 $m->to($user->email, $user->firstname)->subject($subject);
             });
-        }
+//        }
         return redirect('/tutors_list/' . $user->id);
+    }
+    public function calculator($id){
+        $tutor = User::find($id);
+        return view('tutors.calculator', compact('tutor'));
+    }
+    public function calculate(){
+        $tutor = User::find(request('tutor_id'));
+        $hours = request('hours');
+        $tutor_fee = $tutor->fee * $hours;
+        $institution_fee = $tutor_fee * 0.015;
+        $total_fee = $tutor_fee + $institution_fee;
+        $message = "The tutor will get $" . $tutor_fee . '. The college will get $' . $institution_fee . '. The total fee is $' . $total_fee;
+        return view('single_message', compact('message'));
     }
 }

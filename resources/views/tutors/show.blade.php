@@ -39,6 +39,11 @@
             <div class="col-md-12">
                 <label for="email" class="col-md-12 control-label">Availability: {{ $user->availability }}</label>
             </div>
+
+            <div class="col-md-12">
+                <label for="email" class="col-md-12 control-label">Fee per hour: ${{ $user->fee }}</label>
+
+            </div>
             <div class="col-md-12">
                 Rating: <img style="max-width:100px"
                              src="{{ App\Utils::getStarImage($user->rating) }}"></img>({{$user->rating}})
@@ -51,13 +56,17 @@
         @if($user->id == auth()->user()->id)
             <div class="col-md-12 home-body"><br/></div>
             <div class="col-md-12">
-                <a href="/email_students" class="email-calendar-button" style="height:25px;padding:10px">Email all students</a>
+                <a href="/email_students" class="email-calendar-button" style="height:25px;padding:10px">Email student</a>
             </div>
         @endif
         <div class="col-md-12 home-body"><br/></div>
         <div class="col-md-12">
             <a href="/email_tutor/{{$user->id}}" class="email-calendar-button" style="height:25px;padding:10px">Email
                 this tutor to schedule an appointment</a>
+        </div>
+        <div class="col-md-12 home-body"><br/></div>
+        <div class="col-md-12">
+            <a href="/calculator/{{$user->id}}" class="email-calendar-button" style="height:25px;padding:10px">Calculate fees</a>
         </div>
         <div class="col-md-12 home-body"><br/></div>
         <form method="POST" action="/tutor_detail">

@@ -140,6 +140,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('fee') ? ' has-error' : '' }}">
+                            <label for="fee" class="col-md-4 control-label">Fee charged per hour ($): </label>
+
+                            <div class="col-md-6">
+                                <input id="fee" type="text" class="form-control" name="fee" value="{{ Auth::user()->fee  }}" required autofocus>
+
+                                @if ($errors->has('fee'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('fee') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

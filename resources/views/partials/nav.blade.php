@@ -36,8 +36,9 @@
                     <a  href="/tutors_list/{{ Auth::user()->id }}">Hello, {{ Auth::user()->firstname }}</a>
                 </li>
             @endif
-
-
+            <li>
+            <a href="https://woututoringcenter.hipchat.com">Chat</a>
+            </li>
         </ul>
     </div>
 
